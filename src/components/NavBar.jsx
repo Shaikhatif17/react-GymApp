@@ -12,8 +12,8 @@ const NavBar = () => {
         sm:'122px' , xs:'40px'
       },mt:{
         sm:"32px" ,xs:'20px'
-      }
-    }} >
+      }, justifyContent:'none'
+    }}  px='20px'>
       <Link>
         <img
           src={Logo}
@@ -48,7 +48,7 @@ const NavBar = () => {
             color: "#3a1212",
           }}
         >
-          Excercise
+          Exercise
         </a>
       </Stack>
     </Stack>
