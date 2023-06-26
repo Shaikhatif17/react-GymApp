@@ -76,6 +76,6 @@ onClick={handleSearch}
 </Box>
   </Stack>
   )
-}
+};
 
 export default SearchExercises;
