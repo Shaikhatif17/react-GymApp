@@ -1,14 +1,32 @@
 import React ,{useState, useEffect} from 'react';
-import {Box, Button ,Stack ,TextField, Typography} from '@mui/material'
+import {Box, Button ,Stack ,TextField, Typography} from '@mui/material';
 
+import{exerciseOptions,fetchData} from '../utils/fetchData';
 const SearchExercises = () => {
-  const [search ,setSearch]=useState('');
-  const handleSearch=async()=>{
-    if(search){
-      // const exerciseData =await fetchData();
-    }
+  const [search , setSearch]=useState('');
+  const [exercises ,setExercises]= useState([]);
 
+  useEffect(()=>{
+const fetchExercisesData= async ()=>{
+  const bodyPartsData =await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodypartlist',exerciseOptions);
+
+  setBodyparts(['all',...bodyPartsData.bodypartlist])
+}
+  },[])
+  const handleSearch = async () => {
+    if (search) {
+      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      
+      const searchedExercises =exercisesData.filter((item)=>item.name.toLowerCase().includes(search)
+      ||item.target.toLowerCase().includes(search)  
+      |item.equipment.toLowerCase().includes(search)  
+      ||item.bodypart.toLowerCase().includes(search)  
+    );
+  setSearch('');
+  setExercises(searchedExercises);
   }
+
+  };
   return (
   <Stack alignItems="center" mt='37px'
   justifyContent='center' p='20px'>
