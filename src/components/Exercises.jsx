@@ -1,10 +1,19 @@
-import React from 'react';
+import React ,{useEffect ,useState} from  'react';
+import { Pagination } from '@mui/material/Pagination';
+import { Box,Stack ,Typography } from '@mui/material';
 
-const Exercises = () => {
+import { exerciseOptions, fetchData } from '../utils/fetchData';
+
+const Exercises = ({Exercises,setExercises ,bodyPart}) => {
   return (
-    <div>
-      
-    </div>
+ <Box id='exercises'
+ sx={{mt:{lg:'110px'}}}
+ mt='50px'
+ p='20px'>
+<Typography>
+  showing result
+</Typography>
+ </Box>
   )
 }
 
