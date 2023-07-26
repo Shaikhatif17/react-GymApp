@@ -10,8 +10,8 @@ const Exercises = ({Exercises,setExercises ,bodyPart}) => {
  sx={{mt:{lg:'110px'}}}
  mt='50px'
  p='20px'>
-<Typography>
-  showing result
+<Typography variant=''>
+  showing results
 </Typography>
  </Box>
   )
